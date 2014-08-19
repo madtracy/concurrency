@@ -37,7 +37,7 @@ package concurrency.basic;
  *  Demo:@RunAndStart.java
  *
  * 5.Difference between CyclicBarrier and CountDownLatch in java
- * 搜
+ *  1)CyclicBarrier可以重复使用，CountDownLatch只能使用一次
  *
  *
  *

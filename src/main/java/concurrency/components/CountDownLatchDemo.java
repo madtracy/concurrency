@@ -7,11 +7,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Created with IntelliJ IDEA.
  * User: tracy
  * Date: 14-2-4
- * Time: 下午3:16
- * To change this template use File | Settings | File Templates.
  */
 class TaskPortion implements Runnable{
     private static int counter = 0;

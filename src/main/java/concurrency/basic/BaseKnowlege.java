@@ -83,6 +83,22 @@ package concurrency.basic;
  *
  *
  *
+ * 7.How to stop thread in java
+ *  1)after run() or call() method finished
+ *  2)use volatile flag
+ *    Demo: terminate.PrimeGenerator.java
+ *    存在的问题:
+ *      需要等待一次循环执行完再检测标志位,如果循环内代码执行时间很长，那么可能需要很久才能检测一次cancelled标志;更有可能永远都不会检测cancelled标志
+ *      Demo:terminate.BrokenPrimeProducer.java
+ *  3)use interrupt
+ *     1)阻塞库方法(Thread.sleep(),Object.wait()等),都会检查线程何时中断,并且在发现中断时提前返回。它们在相应中断时执行的操作
+ *       包括:清除中断状态,抛出InterruptedException,表示阻塞操作由于中断而提前结束。
+ *     2)JVM并不能保证阻塞方法检测到中断的速度，但在实际情况中响应速度还是非常快的。
+ *     3)当线程在非阻塞状态下中断时，它的中断状态将被设置，然后根据江北取消的操作来检查中断状态以判断发生了中断。
+ *
+ *     Demo:terminate.PrimeProducer
+ *
+ *
  *
  *
  *

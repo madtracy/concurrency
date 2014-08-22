@@ -96,8 +96,8 @@ package concurrency.basic;
  *     2)JVM并不能保证阻塞方法检测到中断的速度，但在实际情况中响应速度还是非常快的。
  *     3)当线程在非阻塞状态下中断时，它的中断状态将被设置，然后根据江北取消的操作来检查中断状态以判断发生了中断。
  *
- *     Demo:terminate.PrimeProducer
- *
+ *     Demo:terminate.PrimeProducer.java
+ *     Demo:terminate.timeout
  *
  *
  *

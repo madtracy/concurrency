@@ -66,7 +66,7 @@ public class TestBlockingQueues {
 
     public static void main(String[] args) {
         test("LinkedBlockingQueue",new LinkedBlockingQueue<LiftOff>());
-        test("ArrayBlockingQueue",new ArrayBlockingQueue<LiftOff>(3));
-        test("SynchronousQueue",new SynchronousQueue<LiftOff>());
+        //test("ArrayBlockingQueue",new ArrayBlockingQueue<LiftOff>(3));
+        //test("SynchronousQueue",new SynchronousQueue<LiftOff>());
     }
 }

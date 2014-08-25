@@ -100,12 +100,16 @@ package concurrency.basic;
  *     Demo:terminate.timeout
  *
  *
+ * 8.What happens when an Exception occurs in a thread?
+ *   If not caught thread will die,if an uncaught exception handler is registered then it will get a call back.
  *
+ * 9.How do you share data between two thread in java
+ *  1)wait and notify
+ *   Demo: cooperation.InterThreadCommunicationExample.java
+ *  2)concurrent data-structure like BlockingQueue
+ *   Demo: cooperation.TestBlockingQueues.java
  *
- *
- *
- *
- *
+ * 10.Diference between notify and notifyAll in java
  *
  *
  *

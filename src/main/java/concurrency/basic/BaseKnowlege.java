@@ -109,7 +109,54 @@ package concurrency.basic;
  *  2)concurrent data-structure like BlockingQueue
  *   Demo: cooperation.TestBlockingQueues.java
  *
- * 10.Diference between notify and notifyAll in java
+ * 10.Difference between notify and notifyAll in java
+ *  1)Main difference between notify and notifyAll is that notify method will only notify one Thread and
+ *    notifyAll method will notify all Threads  which are waiting on that monitor or lock.
+ *  2)notify会唤醒一个等待的线程，至于唤醒哪个则取决于线程的调度器
+ *  3)notifyAll会唤醒所有的等待线程，但是他们会争夺锁；最后只有一个会获得锁并执行，其他的线程则继续等待(所以wait一般都是在循环里
+ *  调用的)
+ *
+ *  Demo:cooperation.NotificationTest.java
+ *
+
+ *
+ *
+ * 11.何时使用notify何时使用notifyAll
+ *    1)You can use notify over notifyAll if all thread are waiting for same condition
+ *      and only one Thread at a time can benefit from condition becoming true.
+ *
+ *
+ * 12.Why wait notify and notifyAll called from synchronized block or method in Java
+ *  1)IllegalMonitorStateException in Java which will occur if we don't call wait (), notify () or notifyAll () method from synchronized context
+ *  2) Any potential race condition between wait and notify method in Java
+ *
+ * 13. Why wait, notify and notifyAll are not inside thread class?
+ *   1)One reason which is obvious is that Java provides lock at object level not at thread level
+ *   2)In Java in order to enter critical section of code, Threads needs lock and they wait for lock,
+ *     they don't know which threads holds lock instead they just know the lock is hold by some thread
+ *     and they should wait for lock instead of knowing which thread is inside the synchronized block and
+ *     asking them to release lock
+
+ *
+ * 14. What is ThreadLocal variable in Java
+ *   Demo:sharing.ThreadLocalTest.java
+ *   Demo:sharing.ThreadLocalVariableHolder.java
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
  *
  *
  *

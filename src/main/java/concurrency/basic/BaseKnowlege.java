@@ -143,6 +143,10 @@ package concurrency.basic;
  *   Demo:sharing.ThreadLocalVariableHolder.java
  *
  *
+ * 15. Difference between interrupt,interrupted,isInterrupted in Java
+ *   1)interrupt() : none static method,Thread.interrupt() set the interrupt status.
+ *   2)interrupted(): static method, check current thread(当前线程) interrupt status and clear interrupt status
+ *   3)isInterrupted(): none static method,check target thread(目标线程) interrupt status and don't clear interrupt status
  *
  *
  *

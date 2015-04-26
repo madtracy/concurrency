@@ -46,7 +46,7 @@ package concurrency.basic;
  *   假设一个线程为变量 aVariable 赋值: aVariable = 3;内存模型需要解决这个问题：在什么条件下,读取aVariable的线程将看到这个值为3
  *
  *   产生问题的原因:
- *    1)在编译器中生成的指令顺序，可以喝源代码中的顺序不同
+ *    1)在编译器中生成的指令顺序，可以和源代码中的顺序不同
  *    2)编译器会把变量保存在寄存器而不是内存中
  *    3)处理器可以采用乱序或者并行等方式来执行指令
  *    4)缓存可能会改变将写入变量提交到主内存的次序
@@ -94,7 +94,7 @@ package concurrency.basic;
  *     1)阻塞库方法(Thread.sleep(),Object.wait()等),都会检查线程何时中断,并且在发现中断时提前返回。它们在相应中断时执行的操作
  *       包括:清除中断状态,抛出InterruptedException,表示阻塞操作由于中断而提前结束。
  *     2)JVM并不能保证阻塞方法检测到中断的速度，但在实际情况中响应速度还是非常快的。
- *     3)当线程在非阻塞状态下中断时，它的中断状态将被设置，然后根据江北取消的操作来检查中断状态以判断发生了中断。
+ *     3)当线程在非阻塞状态下中断时，它的中断状态将被设置，然后根据将被取消的操作来检查中断状态以判断发生了中断。
  *
  *     Demo:terminate.PrimeProducer.java
  *     Demo:terminate.timeout
@@ -128,7 +128,7 @@ package concurrency.basic;
  *
  * 12.Why wait notify and notifyAll called from synchronized block or method in Java
  *  1)IllegalMonitorStateException in Java which will occur if we don't call wait (), notify () or notifyAll () method from synchronized context
- *  2) Any potential race condition between wait and notify method in Java
+ *  2)Avoid race condition between wait and notify method in Java
  *
  * 13. Why wait, notify and notifyAll are not inside thread class?
  *   1)One reason which is obvious is that Java provides lock at object level not at thread level
@@ -148,6 +148,7 @@ package concurrency.basic;
  *   2)interrupted(): static method, check current thread(当前线程) interrupt status and clear interrupt status
  *   3)isInterrupted(): none static method,check target thread(目标线程) interrupt status and don't clear interrupt status
  *
+ * 16.Why you should check condition for waiting in a loop?
  *
  *
  *
